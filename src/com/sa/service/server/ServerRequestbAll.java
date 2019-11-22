@@ -20,24 +20,17 @@ import com.sa.base.ServerManager;
 import com.sa.net.Packet;
 import com.sa.net.PacketType;
 
-public class ServerRequestbRoom extends Packet {
-	public ServerRequestbRoom(){}
+public class ServerRequestbAll extends Packet {
+	public ServerRequestbAll(){}
 	
 	@Override
 	public PacketType getPacketType() {
-		return PacketType.ServerRequestbRoom;
+		return PacketType.ServerRequestbAll;
 	}
 
 	@Override
 	public void execPacket() {
-		System.out.println("SEND ServerRequestbRoom " + this.getFromUserId() + "[" + this.getOption(1) + "]");
-		this.setFromUserId("147082");
-		this.setRoomId("22422");
-		this.setTransactionId(15727);
-		this.setStatus(0);
-		TreeMap<Integer,Object> treeMap = new TreeMap<>();
-		treeMap.put(1, "{'command':'open','content':'我是二班22422第一147082，我在ServerRequestbRoom','domain':'i-clicker','domain_id':37}");
-		this.setOptions(treeMap);
+		//System.out.println("SEND ServerRequestbAll " + this.getFromUserId() + "[" + this.getOption(1) + "]");
 		ServerManager.INSTANCE.sendServerRequest(this);
 	}
 
