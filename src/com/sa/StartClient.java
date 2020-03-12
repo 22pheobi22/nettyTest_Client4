@@ -32,7 +32,7 @@ import com.sa.service.server.ServerRequestcRoomRemove;
 import com.sa.service.server.ServerRequestcShareRemove;
 import com.sa.transport.ChatClient;
 import com.sa.transport.ClientConfigs;
-public class StartClient {
+/*public class StartClient {
 	private static int count = 50;
 	private static List<String> roomIds = Arrays.asList("房间00","房间01","房间02","房间03","房间04","房间05","房间06","房间07","房间08","房间09",
 			"房间10","房间11","房间12","房间13","房间14","房间15","房间16","房间17","房间18","房间19",
@@ -76,7 +76,7 @@ public class StartClient {
 		
 		case "1"://登录
 			try {
-				Thread.sleep(85000);
+				Thread.sleep(28000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -87,7 +87,7 @@ public class StartClient {
 			break;
 		case "10": // 更新共享
 			try {
-				Thread.sleep(85000);
+				Thread.sleep(28000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -130,8 +130,8 @@ public class StartClient {
 
 		//System.exit(0);
 	}
-}
-/*public class StartClient {
+}*/
+public class StartClient {
 	private static int count = 1;
 	private static List<String> roomIds = Arrays.asList("房间A", "房间B", "房间C"
 			,"房间D", "房间E", "房间F"
@@ -175,13 +175,13 @@ public class StartClient {
 			"0.退出测试;"
 	);
 
-	public static void startChatClient() {
+	/*public static void startChatClient() {
 		for (int i=0; i<count; i++) {
 			String roomId = roomIds.get(i%roomIds.size());
 
 			new Thread(new ChatClient(ClientConfigs.REMOTE_SERVER_IP, ClientConfigs.REMOTE_SERVER_PORT, roomId, i+1)).start();
 		}
-	}
+	}*/
 
 	public static void menu() throws Exception {
 		Scanner scan = new Scanner(System.in);
@@ -212,7 +212,7 @@ public class StartClient {
 		switch (menu) {
 		
 		case "1"://登录
-			new Thread(new ChatClient(ClientConfigs.REMOTE_SERVER_IP, ClientConfigs.REMOTE_SERVER_PORT, "22422,", 1)).start();
+			new Thread(new ChatClient(ClientConfigs.REMOTE_SERVER_IP, ClientConfigs.REMOTE_SERVER_PORT, "22422,", "147082")).start();
 			break;
 		case "2": // 一对一
 			new ServerRequestbOne().execPacket();
@@ -561,7 +561,7 @@ public class StartClient {
 		}
 	}
 
-	*//** CASE 3 一对多【全房间】*//*
+	/** CASE 3 一对多【全房间】*/
 	private static void serverRequestbRoom(Scanner scanner) {
 		System.out.println("请输入消息 : ");
 		String content = scanner.nextLine();
@@ -582,4 +582,4 @@ public class StartClient {
 
 		System.exit(0);
 	}
-}*/
+}
